@@ -15,6 +15,7 @@ func _init(starting_position, new_borders):
 	position = starting_position
 	step_history.append(position)
 	borders = new_borders
+	
 
 func walk(steps):
 	place_room(position)
