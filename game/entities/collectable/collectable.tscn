@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cr0i47bp6vs2k"]
+
+[ext_resource type="Script" uid="uid://b7vxhh8l88uhu" path="res://game/entities/collectable/collectable.gd" id="1_hp241"]
+[ext_resource type="Texture2D" uid="uid://dihngvelmerht" path="res://assets/textures/collectable/carrot.png" id="1_klauj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hp241"]
+radius = 7.5
+
+[node name="Collectable" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_hp241")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.5571418, -0.49999952)
+scale = Vector2(0.18571429, 0.18571429)
+texture = ExtResource("1_klauj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hp241")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

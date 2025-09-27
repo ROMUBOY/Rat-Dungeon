@@ -9,7 +9,7 @@ func create_grid():
 	
 	var tile_size = get_tileset().tile_size
 	
-	astargrid.region = map_rect	
+	astargrid.region = map_rect
 	astargrid.cell_size = tile_size
 	astargrid.default_compute_heuristic = AStarGrid2D.HEURISTIC_MANHATTAN
 	astargrid.default_estimate_heuristic = AStarGrid2D.HEURISTIC_MANHATTAN

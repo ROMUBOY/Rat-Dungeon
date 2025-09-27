@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcgg6svef5q6b"]
+
+[ext_resource type="Script" uid="uid://bbui6tt2w7xn" path="res://game/scenes/energy_update.gd" id="1_ownmj"]
+[ext_resource type="PackedScene" uid="uid://u38jhl1fyify" path="res://game/entities/interface/load_scene_button.tscn" id="2_5uf1l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2cria"]
+bg_color = Color(0.858418, 0, 0.16904023, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5uf1l"]
+bg_color = Color(0, 0.7254902, 0.1764706, 1)
+
+[node name="EnergyUpdate" type="Node2D"]
+script = ExtResource("1_ownmj")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 44.000008
+offset_top = 104.0
+offset_right = 44.000008
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.6800001, 1.6800001)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+offset_right = 332.0
+offset_bottom = 112.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Energy                  "
+
+[node name="ProgressBar" type="ProgressBar" parent="Control/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_2cria")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5uf1l")
+max_value = 20.0
+value = 20.0
+show_percentage = false
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Food aquired:        "
+
+[node name="FoodAquiredNumber" type="Label" parent="Control/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "0"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Rooms explored:  "
+
+[node name="RoomsExplored" type="Label" parent="Control/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "0"
+
+[node name="LoadSceneButton" parent="Control/VBoxContainer" instance=ExtResource("2_5uf1l")]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Next Room"
+target_level_path = "uid://cm5t53ruaxinq"

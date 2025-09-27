@@ -11,8 +11,6 @@ func _physics_process(_delta):
 	if current_path.is_empty():
 		return
 	
-	
-	
 	var target_position = tilemap.map_to_local(current_path.front())
 	global_position = global_position.move_toward(target_position, speed)
 	

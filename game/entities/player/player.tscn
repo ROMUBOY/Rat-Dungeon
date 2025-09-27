@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwrkyftqj1673"]
+[gd_scene load_steps=6 format=3 uid="uid://cwrkyftqj1673"]
 
 [ext_resource type="Script" uid="uid://bxwnavfdx3aub" path="res://game/entities/player/player.gd" id="1_ewlc8"]
 [ext_resource type="Texture2D" uid="uid://8rjdob5idlnp" path="res://assets/textures/player/icon.svg" id="2_gqtae"]
@@ -6,7 +6,14 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_fi4jx"]
 radius = 15.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqtae"]
+bg_color = Color(0.858418, 0, 0.16904023, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4rrl"]
+bg_color = Color(0, 0.7254902, 0.1764706, 1)
+
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 14
 script = ExtResource("1_ewlc8")
 metadata/_edit_group_ = true
 
@@ -18,3 +25,35 @@ texture = ExtResource("2_gqtae")
 shape = SubResource("CircleShape2D_fi4jx")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Control" type="Control" parent="Camera2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -319.0
+offset_top = -177.0
+offset_right = 316.0
+offset_bottom = 179.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/Control"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 4.0
+offset_right = 277.0
+offset_bottom = 44.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Camera2D/Control/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Energy   "
+
+[node name="ProgressBar" type="ProgressBar" parent="Camera2D/Control/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_gqtae")
+theme_override_styles/fill = SubResource("StyleBoxFlat_x4rrl")
+max_value = 20.0
+value = 20.0
+show_percentage = false
