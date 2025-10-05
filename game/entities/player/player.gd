@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name Player
 
+@export_file("*.tscn") var game_over_scene_path = ""
+
 @export var max_energy: float = 20
 
 var current_energy: float
@@ -24,3 +26,8 @@ func _physics_process(delta):
 func _process(delta: float) -> void:
 	current_energy -= delta
 	current_energy_progress_bar.value = current_energy
+	if current_energy <= 0:
+		die()
+
+func die():
+	get_tree().change_scene_to_file(game_over_scene_path)

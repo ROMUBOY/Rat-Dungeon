@@ -32,5 +32,5 @@ func UpdateProgressBar():
 		return
 	
 	progress_bar.value += 0.1 
-	food_aquired -= 0.1 	
+	food_aquired -= 0.1 
 	food_aquired_number.text = str(int(food_aquired))

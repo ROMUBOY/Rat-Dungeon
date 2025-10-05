@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cm5t53ruaxinq"]
 
-[ext_resource type="Script" uid="uid://br4b7spkk11mo" path="res://game/scenes/world.gd" id="1_e7s3x"]
+[ext_resource type="Script" uid="uid://br4b7spkk11mo" path="res://game/scenes/world/world.gd" id="1_e7s3x"]
 [ext_resource type="Texture2D" uid="uid://swhc4i25v5hs" path="res://assets/textures/level_tile_set/RandomLevelGenTileset.png" id="1_ue8aj"]
 [ext_resource type="Script" uid="uid://86tgmdbfl5gl" path="res://game/pathfind.gd" id="3_fknqw"]
 

@@ -1,0 +1,70 @@
+[gd_scene load_steps=3 format=3 uid="uid://p8efy23geagf"]
+
+[ext_resource type="Script" uid="uid://cukpuecj3c3lk" path="res://game/scenes/game_over/game_over.gd" id="1_2uo17"]
+[ext_resource type="PackedScene" uid="uid://u38jhl1fyify" path="res://game/entities/interface/load_scene_button.tscn" id="2_1n4dm"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2uo17")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Game Over"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="RoomsScoreLabel" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Rooms Score:"
+
+[node name="RoomsScoreValue" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HighRoomsScoreLabel" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "High Rooms Score:"
+
+[node name="HighRoomsScoreValue" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 2
+
+[node name="Control" type="Control" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 33.14)
+layout_mode = 2
+
+[node name="LoadSceneButton" parent="CenterContainer/VBoxContainer" instance=ExtResource("2_1n4dm")]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "New Game"
+target_level_path = "uid://cm5t53ruaxinq"

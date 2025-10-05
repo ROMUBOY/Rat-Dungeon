@@ -15,6 +15,7 @@ bg_color = Color(0, 0.7254902, 0.1764706, 1)
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 14
 script = ExtResource("1_ewlc8")
+game_over_scene_path = "uid://p8efy23geagf"
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

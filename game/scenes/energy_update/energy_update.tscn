@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dcgg6svef5q6b"]
 
-[ext_resource type="Script" uid="uid://bbui6tt2w7xn" path="res://game/scenes/energy_update.gd" id="1_ownmj"]
+[ext_resource type="Script" uid="uid://bbui6tt2w7xn" path="res://game/scenes/energy_update/energy_update.gd" id="1_ownmj"]
 [ext_resource type="PackedScene" uid="uid://u38jhl1fyify" path="res://game/entities/interface/load_scene_button.tscn" id="2_5uf1l"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2cria"]
